@@ -1,16 +1,24 @@
-// Firebase configuration for AcademiaHub
-// 1) Create a Firebase web app from Firebase Console.
-// 2) Replace the placeholder values below with your real config.
-// 3) Enable Authentication > Email/Password.
-// 4) Create the admin user and use the same email in ADMIN_EMAIL.
+// Firebase SDK (نسخة تعمل مباشرة في المتصفح)
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import { getStorage } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
 
-export const firebaseConfig = {
-  apiKey: "PUT_YOUR_API_KEY_HERE",
-  authDomain: "PUT_YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "PUT_YOUR_PROJECT_ID",
-  storageBucket: "PUT_YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "PUT_YOUR_SENDER_ID",
-  appId: "PUT_YOUR_APP_ID"
+// إعدادات Firebase الخاصة بك
+const firebaseConfig = {
+  apiKey: "AIzaSyDqsm-zt9r6zjKXgSwmhJk60No5cA_mUvk",
+  authDomain: "academic-platform-a499e.firebaseapp.com",
+  projectId: "academic-platform-a499e",
+  storageBucket: "academic-platform-a499e.firebasestorage.app",
+  messagingSenderId: "99095620829",
+  appId: "1:99095620829:web:05455e7ffa610692ed3f34",
+  measurementId: "G-PX6ML2W3XZ"
 };
 
-export const ADMIN_EMAIL = "admin@example.com";
+// تشغيل Firebase
+const app = initializeApp(firebaseConfig);
+
+// الخدمات
+export const auth = getAuth(app);
+export const db = getFirestore(app);
+export const storage = getStorage(app);
